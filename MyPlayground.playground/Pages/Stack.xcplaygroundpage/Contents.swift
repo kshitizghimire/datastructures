@@ -1,17 +1,3 @@
-import XCTest
-
-//MARK: Node
-class Node<T> {
-    let value: T
-    var next: Node?
-    
-    //MARK: Lifecycle
-    init(value: T, next: Node?) {
-        self.value = value
-        self.next = next
-    }
-    
-}
 
 //MARK: Stack
 class Stack<T> {
@@ -19,7 +5,7 @@ class Stack<T> {
     
     public func push(value: T) {
         let oldTop = top
-        top = Node(value: value, next: nil)
+        top = Node(value: value)
         top?.next = oldTop
         
     }
@@ -36,8 +22,6 @@ class Stack<T> {
     
 }
 
-
-
 let stack = Stack<Int>()
 stack.push(value: 2)
 stack.peek()
@@ -49,14 +33,10 @@ let firstPop = stack.pop()
 let secondPop = stack.pop()
 let thirdPop = stack.pop()
 
-
-
-
 struct User {
     let name: String
     let email: String
 }
-
 
 let user1 = User(name: "User1", email: "mail1@mail.com")
 let user2 = User(name: "User2", email: "mail2@mail.com")
